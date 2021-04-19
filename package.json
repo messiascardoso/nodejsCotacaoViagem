@@ -1,0 +1,19 @@
+{
+  "name": "nodejscotacaoviagem",
+  "version": "1.0.0",
+  "description": "COTACAO DE VIAGEM",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/messiascardoso/nodejsCotacaoViagem.git"
+  },
+  "author": "Messias Cardoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/messiascardoso/nodejsCotacaoViagem/issues"
+  },
+  "homepage": "https://github.com/messiascardoso/nodejsCotacaoViagem#readme"
+}
