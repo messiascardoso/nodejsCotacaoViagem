@@ -11,16 +11,17 @@ npm install
 ```
 
 #Iniciar projeto:
+```
 npm start 
 ou 
 node app.js
-
+```
 #Realizar teste de API
 
 Plugin VScode => REST Client
 ./apitTeste.rest
 
-
+```
 ####### Post Quote ###########
 
 POST http://localhost:3000/route HTTP/1.1
@@ -31,11 +32,12 @@ content-type: application/json
     "to": "BA",
     "price":10
 }
+```
 
 ###### "GET /quote/GRU/SCL" ############
-
+```
 GET http://localhost:3000/quote/GRU/SCL
-
+```
 
 
 
