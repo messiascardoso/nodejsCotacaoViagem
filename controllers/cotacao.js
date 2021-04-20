@@ -1,15 +1,27 @@
 module.exports = function(app) {
     const controller = {};
     var fs = require('fs').promises;
+    const pathFile = __dirname.replace('controllers', '')+'/routes.csv'
     
-    controller.getCotacao = async function(req, res) {
-        const fileContent = await fs.readFile(__dirname.replace('controllers', '')+'/routes.csv');
-        const routesCsv =  convertCsvToJson(fileContent.toString())
+    controller.bestQuote = async function(req, res) {
+        const fileContent = await readFile()
+        const routesCsv = convertCsvToJson(fileContent.toString())
         const params = {} 
         params.from = req.params[0]
         params.to = req.params[1]
         const bestToRoute = calcRoute(params, routesCsv)
         res.json(bestToRoute)
+    }
+
+    controller.saveQuote = async function(req, res) {
+      const newRouteText = `${req.body.from},${req.body.to},${req.body.price}`
+      await fs.appendFile(pathFile, newRouteText);
+      res.status(201).json(newRouteText)
+    }
+
+    async function readFile(){
+      const fileContent = await fs.readFile(pathFile);
+      return fileContent
     }
 
     function convertCsvToJson(fileString) {

@@ -12,6 +12,7 @@ const app = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
+app.disable('x-powered-by');
 app.use(methodOverride());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
